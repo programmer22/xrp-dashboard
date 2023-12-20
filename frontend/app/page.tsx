@@ -418,7 +418,7 @@ export default function Home() {
   const deleteRealWallet = async (walletIndex: number): Promise<void> => {
     const walletToDelete = realWallets[walletIndex];
     console.log('I am deleting this wallet:', walletToDelete);
-    console.log('I am deleting this address: ', walletToDelete.classic_address)
+    console.log('I am deleting this address: ', walletToDelete.classicAddress)
 
 
     if (!walletToDelete) {
@@ -429,7 +429,7 @@ export default function Home() {
 
     try {
         const response = await axios.post('http://localhost:8000/xrpapp/deleterealwallet/', JSON.stringify({
-            classic_address: walletToDelete.classic_address
+            classic_address: walletToDelete.classicAddress
         }), {
             headers: {
                 'Content-Type': 'application/json',
