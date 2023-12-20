@@ -377,33 +377,43 @@ export default function Home() {
   
 
   const handleNewWallet = async (): Promise<void> => {
-    const userId = user?.id;
-
-    console.log("User id: ", userId);
-    
+    // Ensure the user object is not undefined before proceeding
+    if (!user) {
+      setError("User not found. Please log in.");
+      return;
+    }
+  
+    const userId = user.id; // Assuming user object is available and has an id property
+  
+    // Setting up the headers with correct type
+    const headers: HeadersInit = {
+      'Content-Type': 'application/json',
+      // Directly use the userId as it's already checked for undefined
+      'Clerk-User-Id': userId,
+    };
+  
     try {
-      const response = await fetch ('http://localhost:8000/xrpapp/createwallet/', {
+      const response = await fetch('http://localhost:8000/xrpapp/createwallet/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Clerk-User-Id': userId,
-        },
+        headers: headers,
       });
-
+  
       if (!response.ok) {
         // Handle HTTP errors
         setError(`HTTP error! Status: ${response.status}`);
       } else {
+        // Parse the JSON response body
         const data = await response.json();
         console.log("New real wallet data: ", data);
         setRealWallets(currentWallets => [...currentWallets, data]);
       }
-    } catch (error) {
+    } catch (error: any) {
       // Handle network errors and show a user-friendly message
       console.error('Failed to create new wallet:', error);
       setError('Network error. Please check your connection and try again.');
     }
   };
+  
 
   const deleteRealWallet = async (walletIndex: number): Promise<void> => {
     const walletToDelete = realWallets[walletIndex];
