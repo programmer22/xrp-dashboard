@@ -1,18 +1,3 @@
-/*
-
-Hash: 9fa39519e013c142eb5c4b6d7f638f05e8d85ab926a338c8e38209da23f702d7
-From: r37bgXNN1KVzgsfCn7eybp4E87CgjxvgCf
-To: rstqUGquXPDKuT83yX7P5Ags3tyFXseekK
-Amount Transacted: 5XRP
-Date: 7 minutes ago 18/12/2023 - 18:54:42
-Tx Fee: 0.00001 XRP
-Result: Success
-included in block: 43833161
-Confirmations: 135 Confirmed
-
-
-*/
-
 'use client'
 
 import { useState, useEffect, use } from 'react'
