@@ -20,7 +20,6 @@ import Image from 'next/image';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { UserButton } from "@clerk/nextjs";
 import axios from 'axios'
-import { transcode } from 'buffer';
 import { useUser, clerkClient } from '@clerk/nextjs'
 
 // Define the shape of your wallet data using TypeScript interfaces
