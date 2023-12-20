@@ -46,26 +46,26 @@ This project is a web-based XRP Dashboard built with React (Next.js) for the fro
 
 Create a .env.local file in the frontend directory with the following variables:
 
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: Your Clerk publishable key.
-NEXT_PUBLIC_CLERK_SIGN_IN_URL: URL for signing in (e.g., /sign-in).
-NEXT_PUBLIC_CLERK_SIGN_UP_URL: URL for signing up (e.g., /sign-up).
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: Redirect URL after signing in.
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: Redirect URL after signing up.
+- NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: Your Clerk publishable key.
+- NEXT_PUBLIC_CLERK_SIGN_IN_URL: URL for signing in (e.g., /sign-in).
+- NEXT_PUBLIC_CLERK_SIGN_UP_URL: URL for signing up (e.g., /sign-up).
+- NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: Redirect URL after signing in.
+- NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: Redirect URL after signing up.
 
 ## Backend Environment Variables
 
 Create a .env file in the backend directory with the following variables:
 
-DJANGO_SECRET_KEY: A secret key for your Django application.
-DEBUG: Set to True for development or False for production.
-DB_NAME: Your database name.
-DB_USER: Your database username.
-DB_PASSWORD: Your database password.
-DB_HOST: Your database host.
-DB_PORT: Your database port.
-JSON_RPC_URL_TESTNET: URL for the XRPL Testnet.
-JSON_RPC_URL_MAINNET: URL for the XRPL Mainnet.
-CLERK_SECRET_KEY: Your Clerk secret key.
+- DJANGO_SECRET_KEY: A secret key for your Django application.
+- DEBUG: Set to True for development or False for production.
+- DB_NAME: Your database name.
+- DB_USER: Your database username.
+- DB_PASSWORD: Your database password.
+- DB_HOST: Your database host.
+- DB_PORT: Your database port.
+- JSON_RPC_URL_TESTNET: URL for the XRPL Testnet.
+- JSON_RPC_URL_MAINNET: URL for the XRPL Mainnet.
+- CLERK_SECRET_KEY: Your Clerk secret key.
 
 ### Starting the Frontend
 
