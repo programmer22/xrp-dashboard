@@ -81,13 +81,21 @@ export default function Home() {
   const { user } = useUser();
   const [userId, setUserId] = useState('');
 
-  const [sendTxData, setSendTxData] = useState({
+  // Assuming these are the correct types for your state:
+  const [sendTxData, setSendTxData] = useState<{
+    senderSecret: string;
+    receiverAddress: string;
+    senderAddress: string;
+    amount: number;
+    sequence: number;
+  }>({
     senderSecret: '',
     receiverAddress: '',
     senderAddress: '',
-    amount: 0,  // Amount in drops
+    amount: 0, // Amount in drops
     sequence: 0,
   });
+
 
   useEffect(() => {
     const getUserId = async () => {
@@ -136,7 +144,7 @@ export default function Home() {
     fetchWallets();
   }, [user]);
 
-  const deleteWallet = async (walletIndex) => {
+  const deleteWallet = async (walletIndex: number): Promise<void> => {
     // Get the wallet to delete using the index
     const walletToDelete = walletInfo[walletIndex];
     console.log(walletToDelete);
@@ -173,7 +181,7 @@ export default function Home() {
   
 
 
-  const handleSendXrp = async (senderAddress) => {  
+  const handleSendXrp = async (senderAddress: string): Promise<void> => {  
     if (!sendTxData.senderSecret || !sendTxData.receiverAddress || sendTxData.amount <= 0) {  
       setError('Please fill all transaction details correctly.');  
       return;  
@@ -202,11 +210,11 @@ export default function Home() {
     }  
   };  
 
-  const handleAddressChange = (event: any) => {
+  const handleAddressChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setAddress(event.target.value); // Update the state when the public key input changes
   };
 
-  const fetchWalletData = async (address) => {
+  const fetchWalletData = async (address: string): Promise<void> => {
     try {
       const response = await axios.post('http://localhost:8000/xrpapp/getaccountinfo/', { address });
       if (response.data) {
@@ -221,13 +229,13 @@ export default function Home() {
   };
 
   // Call this function when the dropdown changes
-  const handleWalletTypeChange = (event: any) => {
+  const handleWalletTypeChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     setSelectedWalletType(event.target.value);
     // Additional logic to load the wallet info based on the selection
   };
 
   // Function to initiate the search for the account details using the public key
-  const fetchAccountDetails = async () => {
+  const fetchAccountDetails = async (): Promise<void> => {
     try {
       const response = await fetch('http://localhost:8000/xrpapp/getaccountinfo/', {
         method: 'POST',
@@ -263,10 +271,10 @@ export default function Home() {
   };
 
   // Render Transaction
-  const renderTransaction = (tx: Transaction, index: number) => {
+  const renderTransaction = (tx: Transaction, index: number): JSX.Element => {
     const transactionDate = new Date(tx.tx.date).toLocaleString();
 
-    const renderTakerGets = (takerGets: any) => {
+    const renderTakerGets = (takerGets: { currency: string; issuer: string; value: string } | string): JSX.Element => {
       if (takerGets && typeof takerGets === 'object' && 'currency' in takerGets) {
         return (
           <span>
@@ -280,7 +288,7 @@ export default function Home() {
       }
     };
   
-    const renderTakerPays = (takerPays: any) => {
+    const renderTakerPays = (takerPays: { currency: string; issuer: string; value: string } | string): JSX.Element => {
       if (takerPays && typeof takerPays === 'object' && 'currency' in takerPays) {
         return (
           <span>
@@ -327,7 +335,7 @@ export default function Home() {
   };
 
 
-  const handleAddWalletClick = async () => {
+  const handleAddWalletClick = async (): Promise<void> => {
     const userId = user?.id;
   
     try {
@@ -362,7 +370,7 @@ export default function Home() {
     }
   };
 
-  const handleNewWallet = async () => {
+  const handleNewWallet = async (): Promise<void> => {
     const userId = user?.id;
 
     console.log("User id: ", userId);
@@ -391,7 +399,7 @@ export default function Home() {
     }
   };
 
-  const deleteRealWallet = async (walletIndex) => {
+  const deleteRealWallet = async (walletIndex: number): Promise<void> => {
     const walletToDelete = realWallets[walletIndex];
     console.log('I am deleting this wallet:', walletToDelete);
     console.log('I am deleting this address: ', walletToDelete.classic_address)
