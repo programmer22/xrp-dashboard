@@ -42,7 +42,7 @@ This project is a web-based XRP Dashboard built with React (Next.js) for the fro
 
 ## Running the Project
 
-#Frontend Environment Variables
+## Frontend Environment Variables
 
 Create a .env.local file in the frontend directory with the following variables:
 
@@ -52,7 +52,7 @@ NEXT_PUBLIC_CLERK_SIGN_UP_URL: URL for signing up (e.g., /sign-up).
 NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: Redirect URL after signing in.
 NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: Redirect URL after signing up.
 
-#Backend Environment Variables
+## Backend Environment Variables
 
 Create a .env file in the backend directory with the following variables:
 
