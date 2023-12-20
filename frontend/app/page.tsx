@@ -564,7 +564,7 @@ export default function Home() {
                                 <input
                                   className="form-input w-full border-2 p-2 rounded-md"
                                   placeholder="Amount XRP"
-                                  onChange={(e) => setSendTxData({ ...sendTxData, amount: e.target.value })}
+                                  onChange={(e) => setSendTxData({ ...sendTxData, amount: parseFloat(e.target.value) || 0 })}
                                 />
                                 <input
                                   className="form-input w-full border-2 p-2 rounded-md" 
