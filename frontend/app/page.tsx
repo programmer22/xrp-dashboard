@@ -337,12 +337,12 @@ export default function Home() {
 
   const handleAddWalletClick = async (): Promise<void> => {
     const userId = user?.id;
-
-    // Prepare headers with TypeScript's HeadersInit type for strict typing
+  
+    // Prepare headers
     const headers: HeadersInit = {
       "Content-Type": "application/json",
     };
-
+  
     // Only add the "Clerk-User-Id" header if userId is not undefined
     if (userId) {
       headers["Clerk-User-Id"] = userId;
@@ -351,7 +351,7 @@ export default function Home() {
     try {
       const response = await fetch('http://localhost:8000/xrpapp/createtestwallet/', {
         method: 'POST',
-        headers: headers
+        headers: headers,  // Directly using the headers object
       });
   
       // Check if the HTTP response status code is in the 200 range
@@ -364,7 +364,7 @@ export default function Home() {
         if (data.address && typeof data.balance === 'number') {
           setWalletInfo(currentWallets => [...currentWallets, data]);
         }
-         else {
+        else {
           // Handle the case where JSON is returned but not the expected data
           setError('Invalid data format received from the server.');
         }
@@ -375,6 +375,7 @@ export default function Home() {
       setError('Network error. Please check your connection and try again.');
     }
   };
+  
 
   const handleNewWallet = async (): Promise<void> => {
     const userId = user?.id;
