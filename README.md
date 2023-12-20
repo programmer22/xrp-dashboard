@@ -1,4 +1,4 @@
-# README for the XRP Dashboard Project
+# README 
 
 ## Overview
 
