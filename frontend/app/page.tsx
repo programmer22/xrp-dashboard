@@ -219,7 +219,7 @@ export default function Home() {
       const response = await axios.post('http://localhost:8000/xrpapp/getaccountinfo/', { address });
       if (response.data) {
         const updatedWallets = walletInfo.map(wallet => 
-          wallet.address === address ? { ...wallet, balance: response.data.balance } : wallet
+          wallet.x_address === address ? { ...wallet, balance: response.data.balance } : wallet
         );
         setWalletInfo(updatedWallets); // Update the state with the new wallet data
       }
