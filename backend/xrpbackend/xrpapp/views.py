@@ -51,14 +51,14 @@ def create_test_wallet(request):
         classic_address=wallet.classic_address,
         x_address=wallet.address,  # Assuming this method returns the x_address
         public_key=wallet.public_key,
-        secret=wallet.private_key,  # WARNING: Storing secrets like this is not recommended for production
+        secret=wallet.seed,  # WARNING: Storing secrets like this is not recommended for production
         balance=balance,
     )
 
     # Return the wallet address and balance in JSON format
     # Note: Do not expose the secret in production. It's shown here for educational purposes.
     return JsonResponse({
-        'address': wallet.address,  # Updated from classic_address to address
+        'x_address': wallet.address,  # Updated from classic_address to address
         'balance': balance,
         'secret': wallet.seed  # WARNING: This is insecure. Secrets should be kept private and not exposed.
     })
@@ -70,7 +70,7 @@ def list_test_wallets(request):
         return JsonResponse({'error': 'User ID is required'}, status=400)
 
     wallets = XRPTestWallet.objects.filter(user_id=user_id).values(
-        'classic_address', 'x_address', 'public_key', 'balance'
+        'classic_address', 'x_address', 'public_key', 'balance', 'secret'
     )
 
     return JsonResponse(list(wallets), safe=False)

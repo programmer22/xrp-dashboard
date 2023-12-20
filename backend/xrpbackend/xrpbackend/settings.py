@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from corsheaders.defaults import default_headers
+from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,10 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(szae+jzld*vrmlg&*%%4frl79awr&@39&)t^4wdqvo%$q7^e-'
+SECRET_KEY = config('DJANGO_SECRET_KEY', default='default-secret-key')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# SECURITY WARNING: don't run with debug set to true in production!
+# debug = True - testing
+# debug = False - production
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 

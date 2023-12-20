@@ -1,0 +1,20 @@
+# General
+*.log
+*.pyc
+*.db
+__pycache__/
+db.sqlite3
+
+# Environment files
+.env
+venv/
+.venv/
+env/
+
+# Django
+*.py[cod]
+*/migrations/*.py[cod]
+*/migrations/__pycache__
+
+# macOS specific
+.DS_Store

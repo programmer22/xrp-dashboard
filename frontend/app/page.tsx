@@ -25,8 +25,9 @@ import { useUser, clerkClient } from '@clerk/nextjs'
 
 // Define the shape of your wallet data using TypeScript interfaces
 interface WalletData {
-  address: string;
+  x_address: string;
   balance: number;
+  secret: string;
   // ... any other properties that wallet data should have
 }
 
@@ -549,7 +550,7 @@ export default function Home() {
                                 <div className="flex flex-col">
                                   <button
                                     className="mb-4 mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition ease-in-out duration-150"
-                                    onClick={() => handleSendXrp(wallet.address)}
+                                    onClick={() => handleSendXrp(wallet.x_address)}
                                   >
                                     Send XRP
                                   </button>
@@ -562,7 +563,9 @@ export default function Home() {
                                   </button>
                                 </div>
                               </div>
-                              <p className="text-sm mt-2 text-gray-500">Public Key: {wallet.address}</p>
+                              <p className="text-sm mt-2 text-gray-500"><b>Seed:</b> {wallet.secret}</p>
+                              <p className="text-sm mt-2 text-gray-500"><b>Public Key:</b> {wallet.x_address}</p>
+                              <p className="text-sm mt-2 text-gray-500"><b>XRP Amount:</b> [EXAMPLE: 5 XRP will be converted to 5000000 drops automatically]</p>
                             </div>
                             <div className="text-right">
                             </div>
