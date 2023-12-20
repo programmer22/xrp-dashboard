@@ -27,7 +27,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='default-secret-key')
 # SECURITY WARNING: don't run with debug set to true in production!
 # debug = True - testing
 # debug = False - production
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -82,15 +82,15 @@ WSGI_APPLICATION = 'xrpbackend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': 'xrpdatabase',
-    'USER': 'nicklopacki95',
-    'PASSWORD': 'RYZWT6OpMrN3',
-    'HOST': 'ep-old-sky-77997761.us-east-2.aws.neon.tech',
-    'PORT': '5432',
-    'OPTIONS': {'sslmode': 'require'},
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME', default='xrpdatabase'),
+        'USER': config('DB_USER', default='username'),
+        'PASSWORD': config('DB_PASSWORD', default='password'),
+        'HOST': config('DB_HOST', default='localhost'),
+        'PORT': config('DB_PORT', default='5432'),
+        'OPTIONS': {'sslmode': 'require'},
+    }
 }
 
 
