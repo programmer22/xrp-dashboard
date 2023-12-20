@@ -156,7 +156,7 @@ export default function Home() {
     }
   
     try {
-      const response = await axios.post('http://localhost:8000/xrpapp/deletetestwallet/', JSON.stringify({ classic_address: walletToDelete.classic_address }), {
+      const response = await axios.post('http://localhost:8000/xrpapp/deletetestwallet/', JSON.stringify({ classic_address: walletToDelete.x_address }), {
         headers: {
           'Content-Type': 'application/json',
         },
