@@ -337,15 +337,21 @@ export default function Home() {
 
   const handleAddWalletClick = async (): Promise<void> => {
     const userId = user?.id;
+
+    // Prepare headers with TypeScript's HeadersInit type for strict typing
+    const headers: HeadersInit = {
+      "Content-Type": "application/json",
+    };
+
+    // Only add the "Clerk-User-Id" header if userId is not undefined
+    if (userId) {
+      headers["Clerk-User-Id"] = userId;
+    }
   
     try {
       const response = await fetch('http://localhost:8000/xrpapp/createtestwallet/', {
         method: 'POST',
-        headers: {
-          // Headers may be required depending on your Django configuration
-          'Content-Type': 'application/json',
-          'Clerk-User-Id': userId,
-        },
+        headers: headers
       });
   
       // Check if the HTTP response status code is in the 200 range
