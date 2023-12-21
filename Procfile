@@ -1,4 +1,4 @@
-web: gunicorn xrpbackend.wsgi:application --log-file -
+web: gunicorn backend.xrpbackend.wsgi:application --log-file -
 
 
 
