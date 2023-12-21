@@ -64,6 +64,8 @@ export default function Home() {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const { user } = useUser();
   const [userId, setUserId] = useState('');
+  const [transactionId, setTransactionId] = useState('');
+
 
   // Assuming these are the correct types for your state:
   const [sendTxData, setSendTxData] = useState<{
@@ -184,6 +186,7 @@ export default function Home() {
       console.log(response);
       if (response.data.success) {  
         console.log('Transaction Successful:', response.data.response);  
+        setTransactionId(response.data.response.transaction_id);
         fetchWalletData(transactionData.receiverAddress); // Update receiver wallet  
         fetchWalletData(senderAddress); // Update sender wallet  
       } else {  
@@ -345,7 +348,7 @@ export default function Home() {
       } else {
         // Parse the JSON response body
         const data = await response.json();
-        if (data.address && typeof data.balance === 'number') {
+        if (data.x_address && typeof data.balance === 'number') {
           setWalletInfo(currentWallets => [...currentWallets, data]);
         }
         else {
@@ -575,6 +578,7 @@ export default function Home() {
                               <p className="text-sm mt-2 text-gray-500"><b>Seed:</b> {wallet.secret}</p>
                               <p className="text-sm mt-2 text-gray-500"><b>Public Key:</b> {wallet.x_address}</p>
                               <p className="text-sm mt-2 text-gray-500"><b>XRP Amount:</b> [EXAMPLE: 5 XRP will be converted to 5000000 drops automatically]</p>
+                              <b>Transaction ID:</b> {transactionId || 'N/A'}
                             </div>
                             <div className="text-right">
                             </div>
