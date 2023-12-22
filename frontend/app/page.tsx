@@ -100,7 +100,7 @@ export default function Home() {
       if (user) {
         try {
           const userId = user.id; // or user.email for email
-          const response = await axios.get(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listtestwallets/?userId=${userId}`);
+          const response = await axios.get(`http://localhost:8000/xrpapp/listtestwallets/?userId=${userId}`);
           setWalletInfo(response.data);
         } catch (error) {
           console.error('Error fetching wallets:', error);
@@ -118,7 +118,7 @@ export default function Home() {
       if (user) {
         try {
           const userId = user.id; // or user.email for email
-          const response = await axios.get(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listrealwallets/?userId=${userId}`);
+          const response = await axios.get(`http://localhost:8000/xrpapp/listrealwallets/?userId=${userId}`);
           setRealWallets(response.data);
         } catch (error) {
           console.error('Error fetching wallets:', error);
@@ -336,7 +336,7 @@ export default function Home() {
     }
   
     try {
-      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createtestwallet/', {
+      const response = await fetch('http://localhost:8000/xrpapp/createtestwallet/', {
         method: 'POST',
         headers: headers,  // Directly using the headers object
       });
@@ -417,7 +417,7 @@ export default function Home() {
 
     try {
         const response = await axios.post('http://localhost:8000/xrpapp/deleterealwallet/', JSON.stringify({
-            x: walletToDelete.classicAddress
+            classic_address: walletToDelete.classicAddress
         }), {
             headers: {
                 'Content-Type': 'application/json',
