@@ -1,2 +1,2 @@
-web: gunicorn xrpbackend.wsgi
+web: gunicorn xrpbackend.wsgi:application
 
