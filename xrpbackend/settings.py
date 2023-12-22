@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'xrpbackend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')) or {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL', 'postgres://username:password@localhost:5432/xrpdatabase')) or {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME', default='xrpdatabase'),
         'USER': config('DB_USER', default='username'),
@@ -125,7 +125,7 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
-    'https://papaya-muffin-6e7c84.netlify.app',
+    'https://main--papaya-muffin-6e7c84.netlify.app',
 ]
 
 
