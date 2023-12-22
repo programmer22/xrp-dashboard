@@ -30,8 +30,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='default-secret-key')
 # debug = False - production
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['*']
-
+ALLOWED_HOSTS = ['https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -135,6 +134,11 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    'https://papaya-muffin-6e7c84.netlify.app',
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

@@ -336,7 +336,7 @@ export default function Home() {
     }
   
     try {
-      const response = await fetch('http://localhost:8000/xrpapp/createtestwallet/', {
+      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createtestwallet/', {
         method: 'POST',
         headers: headers,  // Directly using the headers object
       });
@@ -417,7 +417,7 @@ export default function Home() {
 
     try {
         const response = await axios.post('http://localhost:8000/xrpapp/deleterealwallet/', JSON.stringify({
-            classic_address: walletToDelete.classicAddress
+            x: walletToDelete.classicAddress
         }), {
             headers: {
                 'Content-Type': 'application/json',
