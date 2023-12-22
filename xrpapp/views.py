@@ -1,5 +1,6 @@
 # views.py
 from django.http import JsonResponse
+from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
 from xrpl.clients import JsonRpcClient
 from xrpl.wallet import generate_faucet_wallet
@@ -19,6 +20,9 @@ import json
 import requests
 
 XRPL_BASE_OFFSET = 946684800  # Seconds from Unix Epoch to Ripple Epoch
+
+def home(request):
+    return HttpResponse("Welcome to my app!")
 
 # Creates a test wallet and returns the wallet in json format 
 @csrf_exempt  # Exempt this view from CSRF verification, be cautious with this in production
