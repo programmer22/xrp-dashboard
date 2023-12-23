@@ -100,7 +100,7 @@ export default function Home() {
       if (user) {
         try {
           const userId = user.id; // or user.email for email
-          const response = await axios.get(`http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listtestwallets/?userId=${userId}`);
+          const response = await axios.get(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listtestwallets/?userId=${userId}`);
           setWalletInfo(response.data);
         } catch (error) {
           console.error('Error fetching wallets:', error);
@@ -118,7 +118,7 @@ export default function Home() {
       if (user) {
         try {
           const userId = user.id; // or user.email for email
-          const response = await axios.get(`http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listrealwallets/?userId=${userId}`);
+          const response = await axios.get(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listrealwallets/?userId=${userId}`);
           setRealWallets(response.data);
         } catch (error) {
           console.error('Error fetching wallets:', error);
@@ -142,7 +142,7 @@ export default function Home() {
     }
   
     try {
-      const response = await axios.post('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/deletetestwallet/', JSON.stringify({ 
+      const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/deletetestwallet/', JSON.stringify({ 
         classic_address: walletToDelete.x_address 
       }), {
         headers: {
@@ -184,7 +184,7 @@ export default function Home() {
         // ... other data if necessary  
       };  
     
-      const response = await axios.post('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/sendxrptransaction/', transactionData);  
+      const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/sendxrptransaction/', transactionData);  
       console.log(response);
       if (response.data.success) {  
         console.log('Transaction Successful:', response.data.response);  
@@ -205,7 +205,7 @@ export default function Home() {
 
   const fetchWalletData = async (address: string): Promise<void> => {
     try {
-      const response = await axios.post('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/getaccountinfo/', { address });
+      const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/getaccountinfo/', { address });
       if (response.data) {
         const updatedWallets = walletInfo.map(wallet => 
           wallet.x_address === address ? { ...wallet, balance: response.data.balance } : wallet
@@ -226,7 +226,7 @@ export default function Home() {
   // Function to initiate the search for the account details using the public key
   const fetchAccountDetails = async (): Promise<void> => {
     try {
-      const response = await fetch('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/getaccountinfo/', {
+      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/getaccountinfo/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -338,7 +338,7 @@ export default function Home() {
     }
   
     try {
-      const response = await fetch('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createtestwallet/', {
+      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createtestwallet/', {
         method: 'POST',
         headers: headers,  // Directly using the headers object
       });
@@ -383,7 +383,7 @@ export default function Home() {
     };
   
     try {
-      const response = await fetch('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createwallet/', {
+      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createwallet/', {
         method: 'POST',
         headers: headers,
       });
@@ -418,7 +418,7 @@ export default function Home() {
     }
 
     try {
-        const response = await axios.post('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/deleterealwallet/', JSON.stringify({
+        const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/deleterealwallet/', JSON.stringify({
             classic_address: walletToDelete.classicAddress,
         }), {
             headers: {
