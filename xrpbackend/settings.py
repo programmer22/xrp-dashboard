@@ -19,7 +19,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='default-secret-key')
 # debug = False - production
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'xrp-dashboard-backend-e11b4f6d709d.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com']
 
 
 # Application definition
