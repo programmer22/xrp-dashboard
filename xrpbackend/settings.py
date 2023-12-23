@@ -19,7 +19,7 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='default-secret-key')
 # debug = False - production
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['xrp-dashboard-backend-e11b4f6d709d.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'xrp-dashboard-backend-e11b4f6d709d.herokuapp.com']
 
 
 # Application definition
@@ -71,7 +71,7 @@ WSGI_APPLICATION = 'xrpbackend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL')) or {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL', 'postgres://faxapippnpeiir:3a18cf928448713e0dc7cf3e325c8d1e02b710fa760ff2d7cc26b979667c36ef@ec2-44-214-132-149.compute-1.amazonaws.com:5432/d5r5090snqvki1' )) or {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME', default='xrpdatabase'),
         'USER': config('DB_USER', default='username'),
@@ -126,6 +126,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     'https://papaya-muffin-6e7c84.netlify.app',
+    'https://localhost:3000',
 ]
 
 
