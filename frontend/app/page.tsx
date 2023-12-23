@@ -419,7 +419,7 @@ export default function Home() {
 
     try {
         const response = await axios.post('http://https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/deleterealwallet/', JSON.stringify({
-            classic_address: walletToDelete.classic_address,
+            classic_address: walletToDelete.classicAddress,
         }), {
             headers: {
                 'Content-Type': 'application/json',
