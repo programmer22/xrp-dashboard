@@ -99,9 +99,13 @@ export default function Home() {
     const fetchWallets = async () => {
       if (user) {
         try {
-          const userId = user.id; // or user.email for email
-          const response = await axios.get(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listtestwallets/?userId=${userId}`);
-          setWalletInfo(response.data);
+          const userId = user.id;
+          const response = await fetch(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listtestwallets/?userId=${userId}`);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          const data = await response.json();
+          setWalletInfo(data);
         } catch (error) {
           console.error('Error fetching wallets:', error);
           setError('Failed to fetch wallets');
