@@ -1,5 +1,6 @@
 'use client'
 
+
 import { useState, useEffect, use } from 'react'
 import Image from 'next/image';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -444,12 +445,16 @@ export default function Home() {
 };
 
 
+
+
+
+
   return (
-    <div className="bg-gray-600">
-      <div className="container mx-auto p-8 text-black">
-            <header className="bg-white shadow-md p-4 mb-4 flex justify-between items-center rounded-md">
+    <div className="bg-gray-600 border-4 border-yellow-200 text-sm">
+      <div className="container mx-auto p-8 text-black border-4 border-yellow-200">
+            <header className="bg-white shadow-md p-4 mb-4 flex justify-between items-center rounded-md border-4 border-yellow-200">
               <div className="flex items-center space-x-3">
-                <Image src="/logo.png" alt="Platform Logo" width={40} height={40} className="rounded-full" />
+                <Image src="/logo.png" alt="Platform Logo" width={40} height={40} className="rounded-full border-4 border-yellow-200" />
                 <h1 className="text-gray-900 text-2xl font-bold">Dashboard<span className="text-blue-600">X</span></h1>
               </div>
               <div className="flex items-center space-x-3 bg-gray-100 rounded-full border-2 border-gray-200">
@@ -475,9 +480,9 @@ export default function Home() {
 
 
             {/* ... Rest of your dashboard code ... */ }
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-3 gap-8 border-4 border-yellow-200">
               <aside className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-lg shadow-lg">
-                <div className="mb-8 flex items-center space-x-4">
+                <div className="mb-8 flex items-center space-x-4 border-4 border-yellow-200">
                   <img src="pic.png" alt="User Avatar" className="h-16 w-16 rounded-full border-4 border-white shadow-sm transition-all hover:scale-105" />
                   <div>
                     <h1 className="text-xl font-extrabold text-white">Greetings, Nick</h1>
