@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a Copublished repository with Bryson Bezdek and is submitted to Columbia University as a school project. It is a web-based XRP Dashboard built with React (Next.js) for the frontend and Django for the backend. It allows users to manage XRP wallets, view account details, send XRP transactions, and perform other related tasks.
+This project is a Co-published repository with Bryson Bezdek and is submitted to XRPL Foundation as an ambassador project. It is a web-based XRP Dashboard built with React (Next.js) for the frontend and Django for the backend. It allows users to manage XRP wallets, view account details, send XRP transactions, and perform other related tasks.
 
 ## Features
 
