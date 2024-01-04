@@ -446,7 +446,7 @@ export default function Home() {
 
   return (
     <div className="bg-gray-600 text-sm">
-      <div className="container mx-auto p-8 text-black">
+      <div className="container mx-auto p-4 md:p-8 text-black">
             <header className="bg-white shadow-md p-4 mb-4 flex justify-between items-center rounded-md">
               <div className="flex items-center space-x-3">
                 <Image src="/logo.png" alt="Platform Logo" width={40} height={40} className="rounded-full" />

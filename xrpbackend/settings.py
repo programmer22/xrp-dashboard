@@ -4,7 +4,6 @@ from decouple import config
 import os
 import dj_database_url
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +19,6 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default='default-secret-key')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'xrp-dashboard-backend-e11b4f6d709d.herokuapp.com']
-
 
 # Application definition
 
@@ -66,7 +64,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'xrpbackend.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -81,7 +78,6 @@ DATABASES = {
         'OPTIONS': {'sslmode': 'require'},
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -100,7 +96,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -121,14 +116,12 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
     'Clerk-User-Id',
 ]
 
-
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     'https://papaya-muffin-6e7c84.netlify.app',
     'https://localhost:3000',
 ]
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -137,7 +130,6 @@ STATIC_URL = 'static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

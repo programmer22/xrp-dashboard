@@ -6,6 +6,7 @@ from . import views  # This line imports the views module from the current packa
 
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('createtestwallet/', views.create_test_wallet, name='create_test_wallet'),
     path('createwallet/', views.create_wallet, name='create_wallet'),
     path('getaccountinfo/', views.get_account_info, name='get_account_info'),
