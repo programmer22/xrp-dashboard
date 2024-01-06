@@ -1,0 +1,10 @@
+{
+    "rust-analyzer.procMacro.ignored": {
+        "leptos_macro": [
+            // Uncomment the next line if you want to ignore the `component` macro
+            // "component",
+            "server"
+        ]
+    }
+    
+}

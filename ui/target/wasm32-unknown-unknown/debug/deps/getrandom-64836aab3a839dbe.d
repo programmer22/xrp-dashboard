@@ -1,0 +1,10 @@
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/wasm32-unknown-unknown/debug/deps/libgetrandom-64836aab3a839dbe.rmeta: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/js.rs
+
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/wasm32-unknown-unknown/debug/deps/libgetrandom-64836aab3a839dbe.rlib: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/js.rs
+
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/wasm32-unknown-unknown/debug/deps/getrandom-64836aab3a839dbe.d: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/js.rs
+
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/lib.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/error.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/util.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/getrandom-0.2.11/src/js.rs:
