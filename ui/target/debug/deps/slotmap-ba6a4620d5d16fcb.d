@@ -1,0 +1,11 @@
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/libslotmap-ba6a4620d5d16fcb.rmeta: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/basic.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/dense.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/hop.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/secondary.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/sparse_secondary.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/util.rs
+
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/slotmap-ba6a4620d5d16fcb.d: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/basic.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/dense.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/hop.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/secondary.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/sparse_secondary.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/util.rs
+
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/lib.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/basic.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/dense.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/hop.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/secondary.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/sparse_secondary.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/slotmap-1.0.7/src/util.rs:

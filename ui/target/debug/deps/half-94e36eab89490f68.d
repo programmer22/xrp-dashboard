@@ -1,0 +1,10 @@
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/libhalf-94e36eab89490f68.rmeta: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/bfloat.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/bfloat/convert.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/binary16.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/binary16/convert.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/slice.rs
+
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/half-94e36eab89490f68.d: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/bfloat.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/bfloat/convert.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/binary16.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/binary16/convert.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/slice.rs
+
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/lib.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/bfloat.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/bfloat/convert.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/binary16.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/binary16/convert.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/half-1.8.2/src/slice.rs:

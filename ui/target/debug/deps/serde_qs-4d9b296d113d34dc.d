@@ -1,0 +1,10 @@
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/libserde_qs-4d9b296d113d34dc.rmeta: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/de/mod.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/de/parse.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/error.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/ser.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/utils.rs
+
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/serde_qs-4d9b296d113d34dc.d: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/de/mod.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/de/parse.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/error.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/ser.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/utils.rs
+
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/lib.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/de/mod.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/de/parse.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/error.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/ser.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/serde_qs-0.12.0/src/utils.rs:

@@ -1,0 +1,9 @@
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/libtyped_builder_macro-f854d01cea8ce290.dylib: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/field_info.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/mutator.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/struct_info.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/util.rs
+
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/ui/target/debug/deps/typed_builder_macro-f854d01cea8ce290.d: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/field_info.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/mutator.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/struct_info.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/util.rs
+
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/lib.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/field_info.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/mutator.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/struct_info.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/typed-builder-macro-0.18.0/src/util.rs:

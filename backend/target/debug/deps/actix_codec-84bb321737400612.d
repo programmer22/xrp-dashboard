@@ -1,0 +1,8 @@
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/backend/target/debug/deps/libactix_codec-84bb321737400612.rmeta: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/bcodec.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/framed.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/lines.rs
+
+/Users/nicklopacki/Music/github-projects/xrp-dashboard/backend/target/debug/deps/actix_codec-84bb321737400612.d: /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/lib.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/bcodec.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/framed.rs /Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/lines.rs
+
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/lib.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/bcodec.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/framed.rs:
+/Users/nicklopacki/.cargo/registry/src/index.crates.io-6f17d22bba15001f/actix-codec-0.5.1/src/lines.rs:
