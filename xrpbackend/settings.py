@@ -68,7 +68,7 @@ WSGI_APPLICATION = 'xrpbackend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL', 'postgres://faxapippnpeiir:3a18cf928448713e0dc7cf3e325c8d1e02b710fa760ff2d7cc26b979667c36ef@ec2-44-214-132-149.compute-1.amazonaws.com:5432/d5r5090snqvki1' )) or {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL', 'postgresql://nicklopacki95:RYZWT6OpMrN3@ep-old-sky-77997761.us-east-2.aws.neon.tech/neondb?sslmode=require' )) or {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME', default='xrpdatabase'),
         'USER': config('DB_USER', default='username'),
