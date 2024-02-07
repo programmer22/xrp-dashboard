@@ -1,3 +1,4 @@
+//replace localhost:8000 with http://127.0.0.1:8000 for live backend
 'use client'
 
 
@@ -13,6 +14,7 @@ interface WalletData {
   x_address: string;
   balance: number;
   secret: string;
+  classic_address: string;
   // ... any other properties that wallet data should have
 }
 
@@ -101,7 +103,7 @@ export default function Home() {
       if (user) {
         try {
           const userId = user.id;
-          const response = await fetch(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listtestwallets/?userId=${userId}`);
+          const response = await fetch(`http://127.0.0.1:8000/xrpapp/listtestwallets/?userId=${userId}`);
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
@@ -123,7 +125,7 @@ export default function Home() {
       if (user) {
         try {
           const userId = user.id; // or user.email for email
-          const response = await axios.get(`https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/listrealwallets/?userId=${userId}`);
+          const response = await axios.get(`http://127.0.0.1:8000/xrpapp/listrealwallets/?userId=${userId}`);
           setRealWallets(response.data);
         } catch (error) {
           console.error('Error fetching wallets:', error);
@@ -147,7 +149,7 @@ export default function Home() {
     }
   
     try {
-      const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/deletetestwallet/', JSON.stringify({ 
+      const response = await axios.post('http://127.0.0.1:8000/xrpapp/deletetestwallet/', JSON.stringify({ 
         classic_address: walletToDelete.x_address 
       }), {
         headers: {
@@ -189,7 +191,7 @@ export default function Home() {
         // ... other data if necessary  
       };  
     
-      const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/sendxrptransaction/', transactionData);  
+      const response = await axios.post('http://127.0.0.1:8000/xrpapp/sendxrptransaction/', transactionData);  
       console.log(response);
       if (response.data.success) {  
         console.log('Transaction Successful:', response.data.response);  
@@ -210,7 +212,7 @@ export default function Home() {
 
   const fetchWalletData = async (address: string): Promise<void> => {
     try {
-      const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/getaccountinfo/', { address });
+      const response = await axios.post('http://127.0.0.1:8000/xrpapp/getaccountinfo/', { address });
       if (response.data) {
         const updatedWallets = walletInfo.map(wallet => 
           wallet.x_address === address ? { ...wallet, balance: response.data.balance } : wallet
@@ -231,7 +233,7 @@ export default function Home() {
   // Function to initiate the search for the account details using the public key
   const fetchAccountDetails = async (): Promise<void> => {
     try {
-      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/getaccountinfo/', {
+      const response = await fetch('http://127.0.0.1:8000/xrpapp/getaccountinfo/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -343,7 +345,7 @@ export default function Home() {
     }
   
     try {
-      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createtestwallet/', {
+      const response = await fetch('http://127.0.0.1:8000/xrpapp/createtestwallet/', {
         method: 'POST',
         headers: headers,  // Directly using the headers object
       });
@@ -386,9 +388,11 @@ export default function Home() {
       // Directly use the userId as it's already checked for undefined
       'Clerk-User-Id': userId,
     };
+
+    console.log("Clicked");
   
     try {
-      const response = await fetch('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/createwallet/', {
+      const response = await fetch('http://127.0.0.1:8000/xrpapp/createwallet/', {
         method: 'POST',
         headers: headers,
       });
@@ -412,8 +416,8 @@ export default function Home() {
 
   const deleteRealWallet = async (walletIndex: number): Promise<void> => {
     const walletToDelete = realWallets[walletIndex];
-    console.log('I am deleting this wallet:', walletToDelete);
-    console.log('I am deleting this address: ', walletToDelete.classicAddress)
+    console.log("This is the wallet I hope to delete", walletToDelete);
+    console.log('I am deleting this address: ', walletToDelete.classic_address)
 
 
     if (!walletToDelete) {
@@ -423,8 +427,8 @@ export default function Home() {
     }
 
     try {
-        const response = await axios.post('https://xrp-dashboard-backend-e11b4f6d709d.herokuapp.com/xrpapp/deleterealwallet/', JSON.stringify({
-            classic_address: walletToDelete.classicAddress,
+        const response = await axios.post('http://127.0.0.1:8000/xrpapp/deleterealwallet/', JSON.stringify({
+            classic_address: walletToDelete.classic_address,
         }), {
             headers: {
                 'Content-Type': 'application/json',
@@ -442,7 +446,11 @@ export default function Home() {
         console.error('Error deleting real wallet:', error);
         setError('Error deleting real wallet');
     }
-};
+  };
+
+  const fundRealAccount = () => {
+    alert("currently working on this functionality")
+  }
 
   return (
     <div className="bg-gray-600 text-sm">
@@ -476,16 +484,18 @@ export default function Home() {
 
             {/* ... Rest of your dashboard code ... */ }
             <div className="grid grid-cols-3 gap-8">
-              <aside className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-lg shadow-lg">
-                <div className="mb-8 flex items-center space-x-4">
-                  <img src="pic.png" alt="User Avatar" className="h-16 w-16 rounded-full border-4 border-white shadow-sm transition-all hover:scale-105" />
+              <aside className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 rounded-lg shadow-lg border-2 border-black">
+                <div className="mb-8 grid grid-cols-1 space-x-4 text-center justify-center border-2 border-black p-2">
+                  <div className="flex justify-center items-center">
+                    <img src="pic.png" alt="User Avatar" className="h-16 w-16 rounded-full border-4 border-white shadow-sm transition-all hover:scale-105" />
+                  </div>
                   <div>
                     <h1 className="text-xl font-extrabold text-white">Greetings, Nick</h1>
                     <p className="text-sm text-purple-200">Your last login was 3 hours ago</p>
                   </div>
                 </div>
                 <nav>
-                <ul className="space-y-4">
+                <ul className="space-y-4 border-2 border-black">
                   {['Dashboard', 'Budget', 'Invest', 'Stake', 'Borrow', 'Settings'].map((text, index) => (
                     <li key={index} className="group">
                       <a href={`/${text.toLowerCase()}`} className="flex items-center justify-center p-3 rounded-lg transition-all bg-purple-700 bg-opacity-0 group-hover:bg-opacity-20 text-white">
@@ -496,9 +506,9 @@ export default function Home() {
                 </ul>
 
                 </nav>
-                <div className="flex justify-between items-center mt-8 text-white text-opacity-70">
+                <div className="flex justify-between items-center mt-8 text-white text-opacity-70 overflow-hidden border-2 border-black p-2">
                 { userId ?
-                    <p className="text-sm text-purple-200">Your user id is {userId}</p>
+                    <p className="text-xs text-purple-200 overflow-none">Your user id is {userId}</p>
                 :
                     <p className="text-sm text-purple-200">You are not logged in</p>
                 }
@@ -534,10 +544,11 @@ export default function Home() {
                 </div>
 
                 {/* Dynamic content for Wallet information */}
-                <div className={`${walletInfo.length > 2 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
+                <div className={`${walletInfo.length > 1 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
+                  
                   {/* Test Wallets Rendering Section */}
                   {selectedWalletType === 'testWallet' && (
-                    <div className={`${walletInfo.length > 2 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
+                    <div className={`${walletInfo.length > 1 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
                       {walletInfo.length === 0 ? (
                         <p className="text-center text-gray-600">No test wallets added yet.</p>
                       ) : (
@@ -595,10 +606,10 @@ export default function Home() {
                   )}
 
                   {/* Dynamic content for Wallet information */}
-                  <div className={`${realWallets.length > 2 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
+                  <div className={`${realWallets.length > 1 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
                     {/* Test Wallets Rendering Section */}
                     {selectedWalletType === 'wallet' && (
-                      <div className={`${realWallets.length > 2 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
+                      <div className={`${realWallets.length > 1 ? 'max-h-96 overflow-y-auto' : ''} grid grid-cols-1 gap-4`}>
                         {realWallets.length === 0 ? (
                           <p className="text-center text-gray-600">No real wallets added yet.</p>
                         ) : (
@@ -632,6 +643,13 @@ export default function Home() {
                                       Send XRP
                                     </button>
 
+                                    <button
+                                    className="mb-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition ease-in-out duration-150"
+                                    onClick={() => fundRealAccount()}
+                                  >
+                                    Fund Account
+                                  </button>
+
                                     <button 
                                       onClick={() => deleteRealWallet(index)}
                                       className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md"
@@ -653,16 +671,16 @@ export default function Home() {
                 </div>
 
                 {/* Wallet management buttons */}
-            <div className="mt-6 grid grid-cols-1 gap-4">
-              <button onClick={handleAddWalletClick} className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition ease-in-out duration-150">
-                Add New Test Wallet
-              </button>
-              {error && <p className="text-red-500 text-center">{error}</p>}
-              <button onClick={handleNewWallet} className="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition ease-in-out duration-150">
-                Create New Wallet
-              </button>
-            </div>
-            </main>
+                <div className="mt-6 grid grid-cols-1 gap-4">
+                  <button onClick={handleAddWalletClick} className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md transition ease-in-out duration-150">
+                    Add New Test Wallet
+                  </button>
+                  {error && <p className="text-red-500 text-center">{error}</p>}
+                  <button onClick={handleNewWallet} className="w-full bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-4 rounded-md transition ease-in-out duration-150">
+                    Create New Wallet
+                  </button>
+                </div>
+              </main>
             </div>
 
             <section className="bg-white p-6 rounded-lg shadow-md mt-4">
@@ -700,23 +718,22 @@ export default function Home() {
               </div>
               ) : (
                 <div className="bg-gray-100 p-6 rounded-lg shadow-inner mb-6">
-                <h4 className="text-lg font-medium text-gray-800 mb-3">Account Details</h4>
-                <div className="flex flex-wrap -mx-2">
-                  <div className="px-2 w-full sm:w-1/2 lg:w-1/4 mb-4">
-                    <p className="text-sm font-semibold text-gray-600">Balance</p>
-                    <p className="text-lg text-gray-900">0</p>
-                  </div>
-                  <div className="px-2 w-full sm:w-1/2 lg:w-1/4 mb-4">
-                    <p className="text-sm font-semibold text-gray-600">Classic Address</p>
-                    <p className="text-lg text-gray-900">N/A</p>
+                  <h4 className="text-lg font-medium text-gray-800 mb-3">Account Details</h4>
+                  <div className="flex flex-wrap -mx-2">
+                    <div className="px-2 w-full sm:w-1/2 lg:w-1/4 mb-4">
+                      <p className="text-sm font-semibold text-gray-600">Balance</p>
+                      <p className="text-lg text-gray-900">0</p>
+                    </div>
+                    <div className="px-2 w-full sm:w-1/2 lg:w-1/4 mb-4">
+                      <p className="text-sm font-semibold text-gray-600">Classic Address</p>
+                      <p className="text-lg text-gray-900">N/A</p>
+                    </div>
                   </div>
                 </div>
-              </div>
               )}
 
               {/* ... Add more transactions similarly ... */}
             </section>
-
 
             {/* Transactions here */}
             <div className="grid grid-cols-2 gap-4 mt-4 sticky mb-4">

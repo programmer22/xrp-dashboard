@@ -131,7 +131,7 @@ def create_wallet(request):
     print('Seed', wallet.seed)
     print('Private key', wallet.private_key)
 
-    try:
+    try: 
         # Attempt to get the balance of the new wallet
         balance = get_balance(wallet.classic_address, client)
         print(balance)
